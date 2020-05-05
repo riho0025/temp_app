@@ -1,30 +1,33 @@
-<div class="wrapper">
-  <div class="chat-side">
-    <div class="side-header">
-      <div class="side-header__box">
-        <p class="side-header__box__logo">
-          TEMP APP
-        </p>
-      </div>
-    </div>
-  </div> 
-  <div class="chat-main">
-    <div class="chat-main__header__left">
-      <div class="chat-main__header">
-        <p class="chat-main__header__left__current-family">
-          ゆーざー名いれる
-        </p>
-      </div>
-    </div>
-    <div class="grid-6">
-      <a href ="#">
-        <div class="chat-main__header__left__edit-btn">
-        Edit
+<% if user_signed_in? %>
+  <div class="wrapper">
+    <div class="chat-side">
+      <div class="side-header">
+        <div class="side-header__box">
+          <p class="side-header__box__logo">
+            TEMP APP
+          </p>
         </div>
-      </a>
-      <a class ="chat-main__header__left__logout-btn" href = "#">
-        Logout
-      </a>
+      </div>
+    </div> 
+    <div class="chat-main">
+      <div class="chat-main__header__left">
+        <div class="chat-main__header">
+          <p class="chat-main__header__left__current-family">
+            <%= current_user.name %>
+          </p>
+        </div>
+      </div>
+      <div class="grid-6">
+        <%= link_to "Edit", edit_user_path(current_user), class: "chat-main__header__left__edit-btn" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'chat-main__header__left__logout-btn' %>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="wrapper">  
+    <div class="btn__box">
+      <%= link_to "ログイン", new_user_session_path, class:'left__box' %>
+      <%= link_to "新規登録", new_user_registration_path, class:'left__box' %>
+    </div>
+  </div>
+<% end %>
