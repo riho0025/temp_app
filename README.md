@@ -1,24 +1,27 @@
-# README
+# temp-app
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|email|string|null: false|
+|password|string|null: false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :records
 
-Things you may want to cover:
+## recordsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|value|text||
+|date |text?|
+|user|references|null: false, foreign_key: true|
+|family|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
