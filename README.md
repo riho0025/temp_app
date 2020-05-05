@@ -13,9 +13,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |value|text||
-|date |text?|
+|date |text|null: false｜
 |user|references|null: false, foreign_key: true|
-|family|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
