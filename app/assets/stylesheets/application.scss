@@ -1,6 +1,8 @@
 @import "reset";
+@import "config/colors";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "modules/user";
 @import "modules/records";
 @import "modules/home";
+@import "modules/flash";
