@@ -60,3 +60,5 @@ gem "jquery-rails"
 gem "jquery-ui-rails"
 gem 'devise'
 gem 'haml-rails'
+gem 'font-awesome-sass'
+gem 'chart-js-rails', '~> 0.1.4'
