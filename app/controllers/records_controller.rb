@@ -3,10 +3,13 @@ class RecordsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @user = current_user
-    @records = current_user.records
-    @graph_records = current_user.records.pluck(:value)
-    @graph_date = current_user.records.pluck(:date).map{|date| date.strftime("%m/%d")}
+    if user_signed_in?
+      @user = current_user
+      @users = User.all.where.not(id: current_user.id)
+      @records = current_user.records
+      @graph_records = current_user.records.pluck(:value)
+      @graph_date = current_user.records.pluck(:date).map{|date| date.strftime("%m/%d")}
+    end
   end
 
   def new
@@ -27,10 +30,13 @@ class RecordsController < ApplicationController
     redirect_to root_path
   end
 
+  
+
+
   private
 
   def record_params
-    params.require(:record).permit(:value, :date)
+    params.require(:record).permit(:value, :date).merge(user_id: current_user.id)
   end
   def correct_user
     @record = current_user.records.find_by(id: params[:id])

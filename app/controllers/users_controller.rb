@@ -11,6 +11,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @records = @user.records
+    @users = User.all
+    @graph_records = @user.records.pluck(:value)
+    @graph_date = @user.records.pluck(:date).map{|date| date.strftime("%m/%d")}
+  end
+
   private
 
   def user_params

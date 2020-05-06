@@ -5,7 +5,7 @@
         <div class="side-header__box">
           <ul class="side-header__box__box">
             <li class="side-header__box__logo">
-              TEMP APP
+              <%= link_to "TEMP APP", "/users/#{current_user.id}" %>
             </li>
             <li class="side-header__box__new">
               <%= link_to icon('fas', 'edit', class: 'icon'), new_record_path %>
@@ -14,7 +14,7 @@
       </div>
       <div class="users">
         <div class="users__current-user">
-          <%= current_user.name %>
+          <%= @user.name %>
         </div>
         <% @users.each do |user| %>
           <div class="users__user__name">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="records">
-        <%= render "graph" %>
+        <%= render "records/graph" %>
       </div>
     </div>
   </div>

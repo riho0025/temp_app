@@ -32,6 +32,12 @@
 }
 .side-header__box__box{
   display: flex;
+  .side-header__box__logo a{
+    font-size: 20px;
+  }
+  .side-header__box__logo a:hover{
+    color: white;
+  }
   .side-header__box__new{
     padding-left: 60px;
     a{
@@ -140,3 +146,29 @@
       cursor: pointer;
     }
   }
+ .users{
+  background-color: #fffafa;
+  height: calc(100vh - 100px);
+  overflow: scroll;
+  &__current-user{
+    padding-top: 20px;
+    padding-bottom: 35px;
+    font-size: 20px;
+    padding-left: 20px;
+    background-color: #E4FF8D;
+  }
+  .users__user__name {
+    padding-top: 20px;
+    padding-bottom: 35px;
+    font-size: 20px;
+    padding-left: 20px;
+  }
+  .users__user__name a{
+    color: black;
+  }
+  .users__user__name:hover{
+    background: #D6FF58;
+    text-decoration: none;
+    color: black;
+  }
+}
