@@ -77,7 +77,10 @@
         color: #ffffff;
         font-size: 16px;
       }
-      .chat-main__header__left__edit-btn{
+      a:hover{
+        text-decoration: none;
+      }
+      .chat-main__header__left__edit-btn {
         height: 40px;
         width: 120px; 
         margin: 28px 20px;
@@ -171,4 +174,29 @@
     text-decoration: none;
     color: black;
   }
+}
+.users__current-user a{
+  color: black;
+}
+.users__current-user a:hover{
+  color: black;
+  text-decoration: none;
+}
+.chat-main__lower__btn{
+  background-color: #7FFF00;
+  height: 40px;
+  width: 120px; 
+  margin-top: 28px;
+  margin-bottom: 28px;
+  margin-left: 20px;
+  margin-right: 40px;
+  border: solid 1px;
+  border-color: #7FFF00;
+  line-height: 40px;
+  text-align: center;
+}
+.chat-main__lower__btn:hover,
+.chat-main__header__left__edit-btn:hover,
+.chat-main__header__left__logout-btn:hover{
+  color: white;
 }

@@ -5,7 +5,7 @@
         <div class="side-header__box">
           <ul class="side-header__box__box">
             <li class="side-header__box__logo">
-              <%= link_to "TEMP APP", "/users/#{current_user.id}" %>
+              <%= link_to "TEMP APP", root_path %>
             </li>
             <li class="side-header__box__new">
               <%= link_to icon('fas', 'edit', class: 'icon'), new_record_path %>
@@ -36,6 +36,9 @@
       </div>
       <div class="records">
         <%= render "records/graph" %>
+      </div>
+      <div class="grid-6">
+          <%= link_to "My Page", record_path(current_user), class: "chat-main__lower__btn" %>
       </div>
     </div>
   </div>

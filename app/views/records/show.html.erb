@@ -37,6 +37,9 @@
       <div class="records">
         <%= render "graph" %>
       </div>
+      <div class="grid-6">
+          <%= link_to "My Page", record_path(current_user), class: "chat-main__lower__btn" %>
+      </div>
     </div>
   </div>
 <% else %>

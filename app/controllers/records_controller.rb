@@ -25,7 +25,7 @@ class RecordsController < ApplicationController
       @records = current_user.records.includes(:user)
       flash[:alert] = '体温の投稿に失敗しました。'
     end
-    redirect_to root_path
+    redirect_to record_path(current_user)
   end
 
   def show
