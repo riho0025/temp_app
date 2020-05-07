@@ -5,7 +5,7 @@
         <div class="side-header__box">
           <ul class="side-header__box__box">
             <li class="side-header__box__logo">
-              TEMP APP
+              <%= link_to "TEMP APP", root_path %>
             </li>
             <li class="side-header__box__new">
               <%= link_to icon('fas', 'edit', class: 'icon'), new_record_path %>
@@ -14,9 +14,13 @@
       </div>
       <div class="users">
         <div class="users__current-user">
-          <%= link_to current_user.name, record_path(current_user) %>
+          <%= current_user.name %>
         </div>
-        <%= render "search" %>
+        <% @users.each do |user| %>
+          <div class="users__user__name">
+            <%= link_to(user.name, "/users/#{user.id}") %>
+          </div>
+        <% end %>
       </div>
     </div> 
     <div class="chat-main">
@@ -29,6 +33,9 @@
           <%= link_to "Edit", edit_user_path(current_user), class: "chat-main__header__left__edit-btn" %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'chat-main__header__left__logout-btn' %>
         </div>
+      </div>
+      <div class="records">
+        <%= render "graph" %>
       </div>
     </div>
   </div>

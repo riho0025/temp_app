@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :records
+  def self.search(search)
+    search ? where('name LIKE ?', "%#{search}%") : all
+  end
 end

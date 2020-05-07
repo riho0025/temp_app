@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
 
+  # def search
+  #   @users = User.search(params[:search])
+  # end
+
+  def index
+  end
+
+
   def edit
   end
 
@@ -14,7 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @records = @user.records
-    @users = User.all
+    @users = User.all.where.not(id: current_user.id)
     @graph_records = @user.records.pluck(:value)
     @graph_date = @user.records.pluck(:date).map{|date| date.strftime("%m/%d")}
   end
