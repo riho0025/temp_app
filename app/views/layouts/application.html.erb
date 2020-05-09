@@ -3,11 +3,12 @@
   <head>
     <title>TempApp</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'https://kit.fontawesome.com/3b011d839e.js' %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-1.12.3.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js' %>
   </head>
-
   <body>
     <%= render 'layouts/notifications' %>
     <%= yield %>

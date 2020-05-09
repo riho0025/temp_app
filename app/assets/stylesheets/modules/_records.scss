@@ -1,118 +1,100 @@
-* {
+*{
   box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+a{
+  text-decoration: none;
+}
+a :hover{
+  text-decoration: none;
+}
+button:focus {
+  outline: 0;
+}
+
 
 .wrapper {
-  height: 100vh;
   display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.side-bar {
+  background-color: #43BFA0;
+  width: 250px;
 }
 
-.chat-side {
-  width: 300px;
-  .side-header {
-    background-color: #7FFF00;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    &__box{
-      height: 20px;
-      width: 260px;
-      margin: 0 20px;
-      color: white;
-      font: bold;
-      line-height: 20px;
-      font-size: 20px
-    }
-  }
+.side-bar__lists {
+  padding-top: 80px;
 }
-.chat-side-header{
-  width: calc(100% - 300px);
+
+.side-bar__lists__list {
   height: 100px;
-  background-color: #7FFF00;
 }
-.side-header__box__box{
-  display: flex;
-  .side-header__box__logo a{
-    font-size: 20px;
-  }
-  .side-header__box__logo a:hover{
-    color: white;
-  }
-  .side-header__box__new{
-    padding-left: 60px;
-    a{
-      color: white;
-    }
-  }
+.side-bar .side-bar__lists__list a {
+  display: block;
+  color: white;
+  font-size: 20px;
+  line-height: 100px;
+  padding-left: 20px;
 }
-.chat-main {
-  width: calc(100% - 300px);
-  height: 100vh;
-  // display: flex;
-  // justify-content: space-between;
-  .chat-main__header{
-    height: 100px;
-    background-color: #7FFF00;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    .chat-main__header__left{
-      padding-left: 40px;
-      .chat-main__header__left__current-name{
-        padding-top: 35px;
-        padding-bottom: 15px;
-        color: #ffffff;
-        font-size: 20px;
-      }
-    }
-  }
-    }
-    .grid-6{
-      float: right;
-      text-align: right;
-      display: flex;
-    }
-      a{
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 16px;
-      }
-      a:hover{
-        text-decoration: none;
-      }
-      .chat-main__header__left__edit-btn {
-        height: 40px;
-        width: 120px; 
-        margin: 28px 20px;
-        border: solid 1px;
-        border-color: #ffffff;
-        line-height: 40px;
-        text-align: center;
-      }
-      .chat-main__header__left__logout-btn{
-        height: 40px;
-        width: 120px; 
-        margin-top: 28px;
-        margin-bottom: 28px;
-        margin-left: 20px;
-        margin-right: 40px;
-        border: solid 1px;
-        border-color: #ffffff;
-        line-height: 40px;
-        text-align: center;
-      }
+.side-bar .side-bar__lists__list :hover {
+  color: #43BFA0;
+  background-color: white;
+  text-decoration: none;
+}
+.side-bar__lists__list .btn{
+  text-align: left;
+  border-radius: 0px;
+}
 
-.records {
-  height: calc(100vh - 190px);
-  background-color: #fafafa;
-  padding: 35px 40px 0;
-  overflow: scroll;
+.main-record {
+  background-color: #EEEEEE;
+  width: calc(100% - 250px);
+  position: relative;
+}
+
+.main-record__header {
+  height: 50px;
+  background-color: white;
+}
+.main-record__header__name {
+  float: right;
+  line-height: 50px;
+  padding-right: 100px;
+  color: #666666;
+  font-size: 20px;
+}
+
+.main-record__graph{
+  height: 300px;
+}
+.chart-container{
+  margin: 100px auto;
+  box-shadow: 0 0 8px gray;
+  background-color: white;
 }
 
 
+.sidebar {
+  position: fixed;
+  color: #fff;
+}
+.sidebar.right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #F5FFFA;
+  box-shadow: 0 0 8px gray;
+}
 .form { 
+  width: 100%;
   height: 90px;
   background-color: #d2d2d2;  
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
   padding:20px 40px;
   .new_record{
     display: flex;
@@ -136,67 +118,15 @@
         border-style: none;
         margin-left: 5px;
       }
-
-      }
-    }
-    .form__submit{
-      background-color: #7FFF00;
-      color: white;
-      width: 100px;
-      height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
-      cursor: pointer;
     }
   }
- .users{
-  background-color: #fffafa;
-  height: calc(100vh - 100px);
-  overflow: scroll;
-  &__current-user{
-    padding-top: 20px;
-    padding-bottom: 35px;
-    font-size: 20px;
-    padding-left: 20px;
-    background-color: #E4FF8D;
+  .form__submit{
+    background-color: #43BFA0;
+    color: white;
+    width: 100px;
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    cursor: pointer;
   }
-  .users__user__name {
-    padding-top: 20px;
-    padding-bottom: 35px;
-    font-size: 20px;
-    padding-left: 20px;
-  }
-  .users__user__name a{
-    color: black;
-  }
-  .users__user__name:hover{
-    background: #D6FF58;
-    text-decoration: none;
-    color: black;
-  }
-}
-.users__current-user a{
-  color: black;
-}
-.users__current-user a:hover{
-  color: black;
-  text-decoration: none;
-}
-.chat-main__lower__btn{
-  background-color: #7FFF00;
-  height: 40px;
-  width: 120px; 
-  margin-top: 28px;
-  margin-bottom: 28px;
-  margin-left: 20px;
-  margin-right: 40px;
-  border: solid 1px;
-  border-color: #7FFF00;
-  line-height: 40px;
-  text-align: center;
-}
-.chat-main__lower__btn:hover,
-.chat-main__header__left__edit-btn:hover,
-.chat-main__header__left__logout-btn:hover{
-  color: white;
 }

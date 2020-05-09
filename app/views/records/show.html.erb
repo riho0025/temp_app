@@ -1,46 +1,49 @@
 <% if user_signed_in? %>
   <div class="wrapper">
-    <div class="chat-side">
-      <div class="side-header">
-        <div class="side-header__box">
-          <ul class="side-header__box__box">
-            <li class="side-header__box__logo">
-              <%= link_to "TEMP APP", root_path %>
-            </li>
-            <li class="side-header__box__new">
-              <%= link_to icon('fas', 'edit', class: 'icon'), new_record_path %>
-          </ul>
+    <div class="side-bar">
+      <div class="side-bar__lists">
+        <div class="side-bar__lists__list">
+          <%= link_to root_path do %>
+            <i class="fas fa-crown  fa2-x"></i>
+            Toppage
+          <% end %>
         </div>
-      </div>
-      <div class="users">
-        <div class="users__current-user">
-          <%= current_user.name %>
+        <div class="side-bar__lists__list">
+          <%= link_to record_path(current_user) do %>
+            <fa2-x class="fa fa-android fa2-x">
+            Mypage
+          <% end %>
         </div>
-        <% @users.each do |user| %>
-          <div class="users__user__name">
-            <%= link_to(user.name, "/users/#{user.id}") %>
-          </div>
-        <% end %>
-      </div>
-    </div> 
-    <div class="chat-main">
-      <div class="chat-main__header">
-        <div class="chat-main__header__left">
-          <p class="chat-main__header__left__current-name">
-          </p>
+        <div class="side-bar__lists__list">
+          <%= link_to new_record_path do %>
+            <i class="fas fa-edit fa2-x"></i>
+            Data form
+          <% end %>
         </div>
-        <div class="grid-6">
-          <%= link_to "Edit", edit_user_path(current_user), class: "chat-main__header__left__edit-btn" %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'chat-main__header__left__logout-btn' %>
+        <div class="side-bar__lists__list">
+          <%= link_to edit_user_path(current_user) do %>
+            <i class="fas fa-cog fa2-x"></i>
+            Edit user info
+          <% end %>
         </div>
-      </div>
-      <div class="records">
-        <%= render "graph" %>
-      </div>
-      <div class="grid-6">
-          <%= link_to "My Page", record_path(current_user), class: "chat-main__lower__btn" %>
+        <div class="side-bar__lists__list">
+          <%= link_to destroy_user_session_path, :method => :delete do %>
+            <i class="fas fa-sign-out-alt fa2-x"></i>
+            Logout
+          <% end %>
+        </div>
       </div>
     </div>
+    <div class="main-record">
+      <div class="main-record__header">
+        <div class="main-record__header__name">
+          <%= current_user.name %>
+        </div>
+      </div>
+      <div class="main-record__graph">
+        <%= render "graph" %>
+      </div>
+    </div> 
   </div>
 <% else %>
   <div class="wrapper">  
@@ -50,3 +53,4 @@
     </div>
   </div>
 <% end %>
+

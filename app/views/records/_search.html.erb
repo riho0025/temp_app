@@ -1,12 +1,14 @@
-<%= form_tag(root_path, method: :get, class: "search__form") do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', name: nil %>
+<%= form_tag(root_path, method: :get, id: "form2" ) do %>
+  <%= text_field_tag :search, '', id: 'sbox2', placeholder: 'outher name' %>
+  <%= button_tag type: 'submit', id: "sbtn2", name: nil do %>
+    <i class="fa fa-search"></i>
+  <% end %>
 <% end %>
-<table class="search__name__box">
+<table class="sidebar__search__box">
   <tbody>
   <% @users.each do |user| %>
     <tr>
-      <td class="search__name__box__name"> <%= link_to(user.name, "/users/#{user.id}") %></td>
+      <td class="sidebar__search__box__name"> <%= link_to(user.name, "/users/#{user.id}") %></td>
     </tr>
   <% end %>
   </tbody>

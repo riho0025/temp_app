@@ -1,7 +1,5 @@
 @import "reset";
 @import "config/colors";
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "modules/user";
 @import "modules/records";
 @import "font-awesome-sprockets";
@@ -9,3 +7,5 @@
 @import "modules/home";
 @import "modules/flash";
 @import "modules/search";
+@import "bootstrap-sprockets";
+@import "bootstrap";

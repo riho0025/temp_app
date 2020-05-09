@@ -1,22 +1,56 @@
-.search__form{
-  padding-top: 35px;
-  padding-bottom: 35px;
-  padding-left: 20px;
+#form2 {
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding-top: 0;
+  margin-top: 0;
 }
-.search__name__box{
+#sbtn2 {
+  height: 50px;
+  position: absolute;
+  left: 250px;
+  /*アイコン左右の位置調整*/
+  top: 2px;
+  background: none;
+  border: none;
+  color: gray;
+}
+#sbox2 {
+  height: 50px;
+  padding: 0 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 2px;
+  outline: 0;
+  width: 300px;
+  margin-top: 0;
+  display: block;
+  border-width: 0px;
+  color: gray;
+}
+.sidebar__search__box {
   width: 100%;
-  &__name{
-    padding-top: 20px;
-    padding-bottom: 35px;
-    font-size: 20px;
-    padding-left: 20px;
-    color: black;
-  }
+  margin-top: 50px;
+  overflow: scroll;
+  height: 80px;
 }
-.search__name__box__name:hover{
-  background: #D6FF58;
-  text-decoration: none;
-}
-.search__name__box__name a{
+
+.sidebar__search__box__name {
+  font-size: 20px;
   color: black;
+}
+
+.sidebar__search__box__name a {
+  display: block;
+  font-size: 15px;
+  line-height: 80px;
+  padding-left: 15px;
+  color: #666666;
+}
+
+.sidebar__search__box__name :hover {
+  background-color: white;
+  color: #666666;
+  text-decoration: none;
 }
