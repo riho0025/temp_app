@@ -1,7 +1,7 @@
 .wrapper.select
   #account-page.account-page
     .account-page__header
-      %p Log in
+      %p LOG IN
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
@@ -16,6 +16,6 @@
                 %i.fas.fa-key Password (英数字8文字以上)
             .field-input
               = f.password_field :password, autocomplete: "off"
-          .actions
+          .actions.resingin
             = f.submit "Log in", class: 'btn login'
-            -# = render "devise/shared/links"
+            = render "devise/shared/links"

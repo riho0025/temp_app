@@ -1,32 +1,34 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Create Account
-      %h5 新規アカウントの作成
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
+.wrapper.select
+  #account-page.account-page
+    .account-page__header
+      %p SIGN UP
+    .account-page__inner--left.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
           .field-label
-            = f.label :name
+            = f.label :name do
+              %i.fab.fa-android Name
           .field-input
             = f.text_field :name, autofocus: true
         .field
           .field-label
-            = f.label :email
+            = f.label :email do
+              %i.far.fa-envelope Email
           .field-input
             = f.email_field :email
         .field
           .field-label
-            = f.label :password
-            %i (英数字8文字以上)
+            = f.label :password do
+              %i.fas.fa-key Password (英数字8文字以上)
           .field-input
             = f.password_field :password, autocomplete: "off"
         .field
           .field-label
-            = f.label :password_confirmation
+            = f.label :password_confirmation do
+              %i.fas.fa-key Password (確認用)
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
-        .actions
-          = f.submit "Create Account", class: 'btn'
+        .actions.newsingnup
+          = f.submit "Sign up", class: 'btn signup'
+          = render "devise/shared/links"

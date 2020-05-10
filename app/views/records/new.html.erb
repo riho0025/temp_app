@@ -46,7 +46,7 @@
       <div class="form">
         <%= form_for(@record) do |f| %>
           <div class="input-box">
-            <%= f.datetime_field :date, value: Time.now.strftime("%Y-%m-%dT%H:%M") %>
+            <%= f.datetime_field :date, value: Time.now.strftime("%Y-%m-%dT%H:%M"), class: 'form__record__date'%>
             <%= f.text_field :value, class: 'form__record__value', placeholder: '体温を入力してください' %>
           </div>
           <%= f.submit 'Send', class: 'form__submit' %>
