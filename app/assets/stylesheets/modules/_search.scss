@@ -32,7 +32,6 @@
 .sidebar__search__box {
   width: 100%;
   margin-top: 50px;
-  overflow: scroll;
   height: 80px;
 }
 
@@ -41,7 +40,8 @@
   color: black;
 }
 
-.sidebar__search__box__name a {
+.sidebar__search__box__name a,
+.sidebar__search__box__name p{
   display: block;
   font-size: 15px;
   line-height: 80px;
@@ -54,3 +54,8 @@
   color: #666666;
   text-decoration: none;
 }
+#user-search-result{
+  height :100vh;
+  overflow: scroll;
+}
+

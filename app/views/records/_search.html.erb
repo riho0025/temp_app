@@ -4,12 +4,66 @@
     <i class="fa fa-search"></i>
   <% end %>
 <% end %>
-<table class="sidebar__search__box">
-  <tbody>
-  <% @users.each do |user| %>
-    <tr>
-      <td class="sidebar__search__box__name"> <%= link_to(user.name, "/users/#{user.id}") %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<div id="user-search-result"></div>
+<script>
+  $(function() {
+    function addUser(user) {
+    let html = `
+      <table class="sidebar__search__box">
+        <tbody>
+          <tr>
+            <td class="sidebar__search__box__name">
+              <a href="/users/${user.id}">
+                ${user.name}
+              </a>
+            </td>
+          </tr>
+        <tbody>
+      </table>
+    `;
+    $("#user-search-result").append(html);
+    }
+    function addNoUser() {
+    let html = `
+      <table class="sidebar__search__box">
+        <tbody>
+          <tr>
+            <td class="sidebar__search__box__name">
+              <p>
+                ユーザーが見つかりません。
+              </p>
+            </td>
+          </tr>
+        <tbody>
+      </table>
+    `;
+    $("#user-search-result").append(html);
+    }
+
+    $("#sbox2").on("keyup", function() {
+      let input = $("#sbox2").val();
+      $.ajax({
+      type: "GET",
+      url: "/",
+      data: { keyword: input },
+      dataType: "json"
+    })
+      .done(function(users) {
+        $("#user-search-result").empty();
+
+        if (users.length !== 0) {
+          users.forEach(function(user) {
+            addUser(user);
+          });
+        } else if (input.length == 0) {
+          return false;
+        } else {
+          addNoUser();
+        }
+      })
+      .fail(function() {
+        alert("通信エラーです。ユーザーが表示できません。");
+      });
+    });
+  });
+</script>
