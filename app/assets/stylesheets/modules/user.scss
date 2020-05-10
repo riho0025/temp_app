@@ -69,44 +69,41 @@
 
 input[type='submit'] {
   margin-top: 80px;
-  // margin-left: 50px;
   color: #fff;
   background-color: #43BFA0;
   border-radius: 50px;
   text-align: center;
 }
 
-  .field-label {
-    .field_with_errors {
-      display: inline-block;
-      color: #FF69B4;
-      font-weight: 400;
+.field-label {
+  .field_with_errors {
+    display: inline-block;
+    color: #FF69B4;
+    font-weight: 400;
+  }
+}
+
+.field-input {
+  .field_with_errors {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 5px;
+      background-color: #FF69B4;
     }
   }
-
-  .field-input {
-    .field_with_errors {
-      position: relative;
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 5px;
-        background-color: #FF69B4;
-      }
-    }
-  }
+}
 .newsingnup input[type='submit']{
   margin-top: 30px;
 }
 
 #error_explanation {
-  // margin: 20px 0;
-  // padding: 20px 30px;
   border: 1px solid #ddd;
   border-radius: 2px;
   text-align: center;
