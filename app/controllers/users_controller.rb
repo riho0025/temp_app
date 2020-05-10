@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # end
 
   def index
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
   end
 
 
@@ -22,7 +23,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @records = @user.records
-    @users = User.all.where.not(id: current_user.id)
+    # @users = User.all.where.not(id: current_user.id)
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
     @graph_records = @user.records.pluck(:value)
     @graph_date = @user.records.pluck(:date).map{|date| date.strftime("%m/%d")}
   end
