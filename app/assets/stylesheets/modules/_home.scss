@@ -16,8 +16,8 @@
 .select__box{
   background-color: white;
   margin: 0 auto;
-  width: 1110px;;
-  height: 666px;
+  width: 90%;
+  height: calc(100vh - 100px);
   margin-top: 50px;
   display: flex;
   &__left{
@@ -25,10 +25,10 @@
     height: 100%;
   }
   &__left img{
-    width:auto;
-    height:auto;
-    max-width:100%;
-    max-height:100%;
+    // width:auto;
+    // height:auto;
+    width:100%;
+    height:100%;
     opacity: 0.5;
   }
   &__right{
@@ -71,4 +71,78 @@
 .select__box__right__sign-in :hover{
   text-decoration: none;
   color: white;
+}
+
+@media(max-width:559px){
+  body,html{
+    overflow-x: hidden;
+  }
+  .select__box{
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+    height: 89%;
+    margin-top: 10%;
+    // margin-bottom: 10%;
+    display: flex;
+    &__left{
+      display: none;
+    }
+    &__right{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-color: #F5F5F5;
+      &__sign-in{
+        height: 50px;
+        width: 250px;
+        position: absolute;
+        top: 60%;
+        left: 8%;
+      }
+      &__sign-up{
+        height: 50px;
+        width: 250px;
+        position: absolute;
+        top: 70%;
+        left: 8%;
+      }
+    }
+  }
+}
+@media(min-width:560px) and ( max-width:960px){
+  body,html{
+    overflow-x: hidden;
+  }
+  .select__box{
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+    height: 89%;
+    margin-top: 50px;
+    display: block;
+    &__left{
+      display: none;
+    }
+    &__right{
+      width: 100%;
+      height: 500px;
+      position: relative;
+      background-color: white;
+      &__sign-in{
+        height: 50px;
+        width: 250px;
+        position: absolute;
+        top: 450px;
+        left: 200px;
+      }
+      &__sign-up{
+        height: 50px;
+        width: 250px;
+        position: absolute;
+        top: 520px;
+        left: 200px;
+      }
+    }
+  }
 }

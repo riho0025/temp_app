@@ -178,3 +178,65 @@ input[type='submit'] {
 .topbtn{
   left: 340px;
 }
+
+@media(max-width:559px){
+  .account-page{
+    background-color: white;
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
+    margin-top: 10%;
+    &__header p{
+    font-size: 40px;
+    }
+  }
+  .field .field-label {
+    padding-left: 20%;
+    margin-top: 20px;
+  }
+  .field .field-input input {
+    width: 60%;
+
+  }
+  .resingin{
+    text-align: center;
+    height:200px;
+    // position: static;
+  }
+  .another {
+    position: static;
+    margin-top: 5%;
+  }
+}
+
+@media(min-width:560px) and ( max-width:960px){
+  .account-page{
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    &__header p{
+    font-size: 40px;
+    }
+  }
+  .field .field-label {
+    padding-left: 20%;
+    margin-top: 20px;
+  }
+  .field .field-label i{
+    font-size: 18px;
+  }
+  .field .field-input input {
+    width: 60%;
+
+  }
+  .resingin{
+    text-align: center;
+    height:200px;
+  }
+  .another {
+    position: static;
+    margin-top: 13%;
+  }
+}
