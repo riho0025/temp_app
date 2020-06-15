@@ -9,14 +9,35 @@
 
 - [https://temp-application.herokuapp.com/](https://temp-application.herokuapp.com/)
 
- 
- 
- # Features
-とっても簡単に登録、体温管理ができます。
- 
+# テスト用アカウント
+メールアドレス：test@test
+パスワード：testtest
 
 
-# Note
+# アプリを作った理由
+体温を測り、記録するだけのアプリがなかっため作成しました。
+体温測って、記録するだけのシンプルにすることで日々の日課に取り入れやすいと考えました。
+
+# 機能一覧
+- ログイン機能
+- 体温入力
+- グラフによる描画
+- 名前検索機能
+
+# 工夫したポイント
+シンプルでひとめで全てがわかるようにしました。
+ただ数値を入力して数値を表示するのではなく、グラフを描画することで
+毎日楽しく記録できることを意識しました。
+
+# 使用技術（開発環境）
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+JavaScript/jQuery/html/css
+
+
+
+
+
+# 今後
 今後、API導入やプロフィール機能追加などアプリを発展していく予定です。
  
 
