@@ -10,14 +10,14 @@
 - [https://temp-application.herokuapp.com/](https://temp-application.herokuapp.com/)
 
 # テスト用アカウント
-メールアドレス：test@test
+メールアドレス：test@test<br>
 パスワード：testtest
 
 
 # アプリを作った理由
-体温を測り、記録するだけのアプリがなかっため作成しました。
+体温を測り、記録するだけのアプリがなかっため作成しました。<br>
 体温測って、記録するだけのシンプルにすることで日々の日課に取り入れやすいと考えました。
-
+<br>
 # 機能一覧
 - ログイン機能
 - 体温入力
@@ -25,10 +25,10 @@
 - 名前検索機能
 
 # 工夫したポイント
-シンプルでひとめで全てがわかるようにしました。
+シンプルでひとめで全てがわかるようにしました。<br>
 ただ数値を入力して数値を表示するのではなく、グラフを描画することで
 毎日楽しく記録できることを意識しました。
-
+<br>
 # 使用技術（開発環境）
 Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 JavaScript/jQuery/html/css
