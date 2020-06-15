@@ -30,7 +30,7 @@
 毎日楽しく記録できることを意識しました。
 <br>
 # 使用技術（開発環境）
-Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code<br>
 JavaScript/jQuery/html/css
 
 
